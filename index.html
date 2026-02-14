@@ -106,19 +106,17 @@ body {
   display: inline-block;
   background: rgba(0, 200, 200, 0.15);
   color: var(--teal);
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   margin-bottom: 2rem;
   border: 1px solid rgba(0, 200, 200, 0.3);
 }
 
 h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -129,27 +127,27 @@ h1 {
 }
 
 .subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  color: var(--gray-mid);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--gray-light);
   margin-bottom: 3rem;
   line-height: 1.7;
-  font-weight: 300;
 }
 
 .highlight {
   color: var(--teal);
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* ─── FORM ─── */
+/* ─── WAITLIST FORM ─── */
 .waitlist-form {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 2.5rem;
-  margin: 0 auto 3rem;
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  margin: 3rem auto;
   max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
@@ -159,44 +157,45 @@ h1 {
 
 .form-group label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--gray-light);
   margin-bottom: 0.5rem;
+  color: var(--gray-light);
 }
 
 .form-group input {
   width: 100%;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
-  color: var(--white);
+  padding: 1rem 1.25rem;
   font-size: 1rem;
-  font-family: var(--font-body);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: var(--white);
   transition: all 0.3s;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: var(--teal);
-  box-shadow: 0 0 0 3px rgba(0, 200, 200, 0.1);
+  font-family: var(--font-body);
 }
 
 .form-group input::placeholder {
   color: var(--gray-dark);
 }
 
+.form-group input:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px var(--teal-glow);
+}
+
 .submit-btn {
   width: 100%;
-  padding: 1.2rem;
-  background: var(--teal);
-  color: var(--bg-dark);
-  border: none;
-  border-radius: 8px;
+  padding: 1.25rem;
   font-size: 1.1rem;
   font-weight: 700;
   font-family: var(--font-heading);
+  background: var(--teal);
+  color: var(--bg-dark);
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
   box-shadow: 0 4px 20px var(--teal-glow);
@@ -275,6 +274,185 @@ h1 {
   color: var(--gray-mid);
 }
 
+/* ─── CONTENT SECTIONS ─── */
+.content-section {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--white);
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+/* ─── BENEFITS ─── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.benefit-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--teal);
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.benefit-card p {
+  font-size: 1rem;
+  color: var(--gray-mid);
+  line-height: 1.7;
+}
+
+/* ─── FAQ ─── */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.faq-item:hover {
+  border-color: var(--teal);
+}
+
+.faq-question {
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--white);
+  transition: all 0.3s;
+}
+
+.faq-question:hover {
+  color: var(--teal);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: var(--teal);
+  transition: transform 0.3s;
+}
+
+.faq-answer {
+  padding: 0 2rem 1.5rem 2rem;
+  color: var(--gray-light);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ─── SOCIAL PROOF ─── */
+.social-proof {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(0, 200, 200, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 200, 200, 0.2);
+  margin: 4rem 0;
+}
+
+.social-proof-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.social-proof-text {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+}
+
+/* ─── CTA SECTION ─── */
+.cta-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(0, 200, 200, 0.1) 0%, rgba(0, 200, 200, 0.05) 100%);
+  border-radius: 20px;
+  margin: 4rem 0;
+}
+
+.cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  background: var(--teal);
+  color: var(--bg-dark);
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px var(--teal-glow);
+}
+
+.cta-btn:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px var(--teal-glow);
+}
+
 /* ─── FOOTER ─── */
 .footer {
   text-align: center;
@@ -313,6 +491,14 @@ h1 {
   
   .stats {
     grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-section {
+    margin: 4rem auto;
   }
 }
 </style>
@@ -397,9 +583,141 @@ h1 {
   </div>
 </section>
 
+<!-- Benefits Section -->
+<section class="content-section">
+  <h2 class="section-title">Why ChatGPT Advertising Will Transform Your Business</h2>
+  
+  <p class="section-intro">
+    ChatGPT represents a fundamental shift in how people search for information and make purchasing decisions. Unlike traditional search engines where users scan through multiple websites, ChatGPT users receive direct, conversational recommendations. Being mentioned in these AI-powered conversations could be the most valuable marketing channel of the next decade.
+  </p>
+  
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">💰</div>
+      <h3>Lower Cost Per Acquisition</h3>
+      <p>Early adopters of Facebook and Google ads saw incredible ROI before competition drove up costs. ChatGPT advertising offers the same opportunity—get in now while CPCs are low and reach is high.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">🎯</div>
+      <h3>Unprecedented Intent Signals</h3>
+      <p>Unlike keyword-based advertising, ChatGPT understands the full context of user conversations. Your ads appear when users are actively seeking solutions, not just browsing.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">🌍</div>
+      <h3>Global Reach, Local Targeting</h3>
+      <p>With 700+ million weekly users across 180+ countries, ChatGPT offers unparalleled reach. Target by location, language, conversation topic, and user intent.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">📊</div>
+      <h3>Conversational Analytics</h3>
+      <p>Understand not just what users clicked, but what questions they asked and what problems they're trying to solve. Gain insights that traditional analytics can't provide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="content-section">
+  <div class="social-proof">
+    <div class="social-proof-number">150+</div>
+    <div class="social-proof-text">UK businesses have already joined the waitlist</div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="content-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What are ChatGPT ads?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        ChatGPT ads are a new advertising format where businesses can have their products, services, or content recommended within ChatGPT conversations. When users ask questions related to your business, ChatGPT can mention your brand as a solution. OpenAI announced this feature in early 2025, with a phased rollout expected throughout 2026.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>When will ChatGPT advertising launch?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        OpenAI has confirmed that ChatGPT advertising will launch in phases throughout 2026. The initial rollout will be to select advertisers on a waitlist basis. By joining our waitlist, you'll be notified immediately when applications open, giving you the best chance to be among the first advertisers.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How much will ChatGPT ads cost?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Pricing hasn't been officially announced, but industry experts predict a CPC (cost-per-click) model similar to Google Ads, potentially starting at £0.50-£2.00 per click for UK businesses. Early adopters typically benefit from lower costs before competition increases. We'll provide pricing guidance as soon as OpenAI releases details.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What types of businesses can advertise on ChatGPT?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Almost any legitimate business can benefit from ChatGPT advertising. It's particularly powerful for B2B services, professional services (legal, accounting, consulting), SaaS products, e-commerce, education, and local businesses. If people ask questions about your industry, ChatGPT ads can help you reach them.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How do I prepare my business for ChatGPT advertising?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Start by optimizing your website for AI Engine Optimization (AEO)—ensuring ChatGPT and other AI tools can understand and recommend your business. This includes clear service descriptions, structured data, FAQ content, and authoritative information. UK Business Automations offers free AEO audits to help you prepare.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What's the difference between ChatGPT ads and Google Ads?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Google Ads target keywords and show results on search engine pages. ChatGPT ads are conversational—your business is recommended within natural dialogue when relevant to the user's question. This creates higher intent and trust, as recommendations feel more like advice from an expert rather than traditional advertising.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Why should I join the waitlist now?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Early adopters of new advertising platforms consistently see the best ROI. When Facebook ads launched, early advertisers paid pennies per click. When Google Ads started, CPCs were a fraction of today's costs. By joining the waitlist now, you'll be positioned to capitalize on ChatGPT advertising before your competitors even know it exists.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="content-section">
+  <div class="cta-section">
+    <h2 class="cta-title">Don't Miss the Biggest Advertising Opportunity of the Decade</h2>
+    <p class="cta-text">
+      Join 150+ forward-thinking UK businesses who are already preparing for ChatGPT advertising. Be first in line when applications open.
+    </p>
+    <a href="#" class="cta-btn" onclick="document.querySelector('.hero').scrollIntoView({behavior: 'smooth'}); return false;">Join the Waitlist Now</a>
+  </div>
+</section>
+
 <footer class="footer">
   <p>A service by <a href="https://ukbusinessautomations.com" target="_blank">UK Business Automations</a></p>
   <p>Helping UK businesses leverage AI for growth</p>
+  <p style="margin-top: 2rem; font-size: 0.85rem;">Want to ensure your website is ready for AI-powered advertising? <a href="https://ukbusinessautomations.com">Get a free AEO audit</a></p>
 </footer>
 
 </body>
